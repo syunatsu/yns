@@ -1,0 +1,105 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/images/article.index.wrapper.jpeg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.upper {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.upper-menu {
+  display: flex;
+}
+
+.sign-up {
+  font-size: 20px;
+  margin: 20px 60px 0 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+}
+
+.sign-in {
+  font-size: 20px;
+  margin: 20px auto 0 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+}
+
+.center-menu {
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.new-post {
+  margin-right: 50px;
+}
+
+.favorite {
+  margin-right: 50px;
+}
+
+.advanced-search {
+  margin-right: 50px;
+}
+
+.search-field {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.submit {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-message {
+  font-size: 130px;
+  margin: 140px 0 30px 0;
+}
+
+.second-message {
+  font-size: 130px;
+  margin: 50px 0 50px 0;
+}
+
+.third-message {
+  color:rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.fourth-message {
+  color:rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}
+
+.y {
+  font-size: 150px;
+  color:rgba(89, 214, 151, 0.9)
+}
+
+.n {
+  font-size: 150px;
+  color: rgba(254, 116, 3, 0.9);
+}
+

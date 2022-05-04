@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "reset" %>
+<%= stylesheet_link_tag "article/index", :media => "all" %>
+
+<div class="wrapper">
+  <div class="upper">
+    <div class="upper-menu">
+      <p class="sign-up">Sign-up</p>
+      <p class="sign-in">Sign-in</p>
+      <div class="center-menu">
+        <h2 class="new-post">new-post</h2>
+        <h2 class="favorite">favorite</h2>
+        <h2 class="advanced-search">advanced search</h2>
+        <div class="search">
+          <%= form_with html: { class: "search-form" } do |f| %>
+            <%= f.text_field :search, class: "search-field" %>
+            <%= f.submit 'search', class: "submit" %>
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+    <div class="messages">
+      <h1 class="first-message"><span class="y">Y</span><span class="n">n</span> ' s</h1>
+      <h1 class="second-message">G A L L E L Y</h1>
+      <h2 class="third-message">Memories last forever.</h2>
+      <h2 class="fourth-message">Well, where shall we go next?</h2>
+    </div>
+  </div>
+    
+  <div class="photos">
+    <%= render partial: 'photos', collection: @articles %>
+  </div>
+</div>
