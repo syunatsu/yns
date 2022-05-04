@@ -1,0 +1,51 @@
+<%= stylesheet_link_tag "reset" %>
+<%= stylesheet_link_tag "user/registration", :media => "all" %>
+<div class="container">
+  <%# ここから左側のメイン %>
+  <div class="left-main">
+    <h1 class="first-message">Welcome to Yn's.<h1>
+    <h1 class="second-message">Let's make happy memories.</h1>
+  </div>
+  <%# ここまで左側のメイン %>
+
+  <%# ここからフォーム部分 %>
+  <div class="form-container">
+    <div class="form">
+      <h2 class="form-title">Sign up</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'sign-up-form'}) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :nickname, class: "field-label" %><br />
+          <%= f.text_field :nickname, class: "field-input", autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, class: "field-label" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field-input" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, class: "field-label" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "field-input" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, class: "field-label" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field-input" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%# ここまでフォーム部分 %>
+</div>
+
+<%= render "devise/shared/links" %>
