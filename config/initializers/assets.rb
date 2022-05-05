@@ -17,4 +17,5 @@ Rails.application.config.assets.precompile += %w(
   article/index
   article/new
   article/form
+  article/show
 )

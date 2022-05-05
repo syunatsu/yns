@@ -10,12 +10,12 @@
         <% if user_signed_in? %>
           <div class="when-sign-in-menu">
             <p class="login-user"><%= "こんにちは、#{current_user.nickname} さん" %></p>
-            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
           </div>
         <% else %>
           <div class="when-sign-out-menu">
-            <%= link_to 'Sign-up', new_user_registration_path, class: "sign-up" %>
-            <%= link_to 'Sign-in', new_user_session_path, class: "sign-in" %> 
+            <%= link_to 'Sign up', new_user_registration_path, class: "sign-up" %>
+            <%= link_to 'Sign in', new_user_session_path, class: "sign-in" %> 
           </div>
         <% end %>
 
@@ -45,7 +45,7 @@
         <p class="new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
         <div class="photos">
           <% @articles.each do |article| %>
-              <%= link_to image_tag(article.image, class: "photo"), '#' %>
+              <%= link_to image_tag(article.image, class: "photo"), article_path(article) %>
           <% end %>
         </div>
       </div>
