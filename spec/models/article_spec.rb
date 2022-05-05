@@ -31,12 +31,12 @@ RSpec.describe Article, type: :model do
       it 'imageを添付していないと投稿できない' do
         @article.image = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include("Image を1枚添付してください")
+        expect(@article.errors.full_messages).to include('Image を1枚添付してください')
       end
       it 'userと紐づいていないと投稿できない' do
         @article.user = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include("User must exist")
+        expect(@article.errors.full_messages).to include('User must exist')
       end
     end
   end

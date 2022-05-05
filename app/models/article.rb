@@ -11,6 +11,7 @@ class Article < ApplicationRecord
   belongs_to :category
 
   private
+
   def validate_image
     errors.add(:image, 'を1枚添付してください') unless image.attached?
   end
