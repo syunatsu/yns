@@ -1,0 +1,21 @@
+<% content_for :css do %>
+  <% stylesheet_link_tag "article/form", :media => "all" %>
+<% end %>
+
+<div class="form">
+  <%= form_with model: article, html: {class: "article-form"} do |f| %>
+    <%= f.label :category_id, "カテゴリー", class: "form-label" %>
+    <%= f.text_field :category_id, class: "form-field" %>
+    <%= f.label :name, "名前", class: "form-label" %>
+    <%= f.text_field :name, class: "form-field" %>
+    <%= f.label :address, "住所", class: "form-label" %>
+    <%= f.text_field :address, class: "form-field" %>
+    <%= f.label :url, "URL", class: "form-label" %>
+    <%= f.text_field :url, class: "form-field" %>
+    <%= f.file_field :image, class: "form-image" %>
+    <%= f.submit 'Create', class: 'create' %>
+  <% end %>
+  <div class="back-to-root">
+    <%= link_to '◀︎Back', root_path, class: "back" %>
+  </div>
+</div>

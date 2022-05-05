@@ -1,5 +1,6 @@
-<%= stylesheet_link_tag "reset" %>
+<% content_for :css do %>
 <%= stylesheet_link_tag "article/index", :media => "all" %>
+<% end %>
 
 <div class="wrapper">
   <div class="upper">
@@ -7,7 +8,7 @@
       <p class="sign-up">Sign-up</p>
       <p class="sign-in">Sign-in</p>
       <div class="center-menu">
-        <h2 class="new-post">new-post</h2>
+        <h2 class="new-post">new post</h2>
         <h2 class="favorite">favorite</h2>
         <h2 class="advanced-search">advanced search</h2>
         <div class="search">
