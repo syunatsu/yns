@@ -1,0 +1,48 @@
+.form {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 400px;
+  height: 550px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.article-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.form-label {
+  margin: 20px 0 10px 40px;
+}
+
+.form-field {
+  margin: 0 auto;
+  width: 80%;
+  padding: 6px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(58, 58, 58, 0.8);
+}
+
+.form-image {
+  margin: 30px 0 0 40px;
+}
+
+.create {
+  width: 50%;
+  padding: 6px 0;
+  margin: 45px auto 0 auto;
+  border-radius: 10px;
+  border: 1px solid rgba(125, 125, 125, 0.8);
+  background-color: indianred;
+  color: white;
+}
+
+.back-to-root {
+  margin: 40px 0 0 40px;
+  font-size: 13px;
+}
+
+.back {
+  text-decoration: none;
+}

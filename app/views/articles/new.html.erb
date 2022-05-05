@@ -1,0 +1,11 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag "article/new", :media => "all" %>
+<% end %>
+
+<div class="container">
+  <div class="title"> 
+    <h1 class="first-title">New memory</h1>
+    <h2 class="second-title">Where did you go ?</h2>
+  </div>
+  <%= render 'form', article: @article %>
+</div>

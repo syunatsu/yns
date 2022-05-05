@@ -1,5 +1,7 @@
-<%= stylesheet_link_tag "reset" %>
-<%= stylesheet_link_tag "user/registration", :media => "all" %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag "user/registration", :media => "all" %>
+<% end %>
+
 <div class="container">
   <%# ここから左側のメイン %>
   <div class="left-main">
@@ -42,8 +44,12 @@
         <div class="actions">
           <%= f.submit "Sign up", class: "submit" %>
         </div>
+        <div class="back-to-root">
+          <%= link_to '◀︎ Back', root_path, class: "back" %>
+         </div>
       <% end %>
     </div>
+    
   </div>
   <%# ここまでフォーム部分 %>
 </div>
