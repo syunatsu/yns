@@ -38,15 +38,18 @@
         <h2 class="third-message">Memories last forever.</h2>
         <h2 class="fourth-message">Well, where shall we go next?</h2>
       </div>
+        <p class="copyright">©︎2022 Yuki Ohira</p>
     </div>
       
-    <div class="photo-background">
-      <p class="new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
-      <div class="photos">
-        <% @articles.each do |article| %>
-            <%= link_to image_tag(article.image, class: "photo"), '#' %>
-        <% end %>
+    <% if user_signed_in? && @articles.present?%>
+      <div class="photo-background">
+        <p class="new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
+        <div class="photos">
+          <% @articles.each do |article| %>
+              <%= link_to image_tag(article.image, class: "photo"), '#' %>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
