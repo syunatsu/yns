@@ -1,5 +1,5 @@
 <%= content_for :css do  %>
-<%= stylesheet_link_tag "user/session", :media => "all" %>
+  <%= stylesheet_link_tag "user/session", :media => "all" %>
 <% end %>
 
 <div class="container">
@@ -28,5 +28,8 @@
         <%= f.submit "Log in", class: "submit" %>
       </div>
     <% end %>
+    <div class="back-to-root">
+      <%= link_to '◀︎ Back', root_path, class: "back" %>
+    </div>
   </div>
 </div>

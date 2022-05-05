@@ -1,34 +1,52 @@
 <% content_for :css do %>
-<%= stylesheet_link_tag "article/index", :media => "all" %>
+  <%= stylesheet_link_tag "article/index", :media => "all" %>
 <% end %>
 
 <div class="wrapper">
-  <div class="upper">
-    <div class="upper-menu">
-      <p class="sign-up">Sign-up</p>
-      <p class="sign-in">Sign-in</p>
-      <div class="center-menu">
-        <h2 class="new-post">new post</h2>
-        <h2 class="favorite">favorite</h2>
-        <h2 class="advanced-search">advanced search</h2>
-        <div class="search">
-          <%= form_with html: { class: "search-form" } do |f| %>
-            <%= f.text_field :search, class: "search-field" %>
-            <%= f.submit 'search', class: "submit" %>
-          <% end %>
+  <div class="container">
+    <div class="upper">
+      <div class="upper-menu">
+
+        <% if user_signed_in? %>
+          <div class="when-sign-in-menu">
+            <p class="login-user"><%= "こんにちは、#{current_user.nickname} さん" %></p>
+            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+          </div>
+        <% else %>
+          <div class="when-sign-out-menu">
+            <%= link_to 'Sign-up', new_user_registration_path, class: "sign-up" %>
+            <%= link_to 'Sign-in', new_user_session_path, class: "sign-in" %> 
+          </div>
+        <% end %>
+
+        <div class="center-menu">
+          <%= link_to 'new post', new_article_path, class: "new-post" %>
+          <%= link_to 'favorite', root_path, class: "favorite" %>
+          <%= link_to 'advanced search', root_path, class: "advanced-search" %>
+          <div class="search">
+            <%= form_with html: { class: "search-form" } do |f| %>
+              <%= f.text_field :search, class: "search-field" %>
+              <%= f.submit 'search', class: "submit" %>
+            <% end %>
+          </div>
         </div>
+        
       </div>
+      <div class="messages">
+        <h1 class="first-message"><span class="y">Y</span><span class="n">n</span> ' s</h1>
+        <h1 class="second-message">G A L L E L Y</h1>
+        <h2 class="third-message">Memories last forever.</h2>
+        <h2 class="fourth-message">Well, where shall we go next?</h2>
+      </div>
+    </div>
       
+    <div class="photo-background">
+      <p class="new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
+      <div class="photos">
+        <% @articles.each do |article| %>
+            <%= link_to image_tag(article.image, class: "photo"), '#' %>
+        <% end %>
+      </div>
     </div>
-    <div class="messages">
-      <h1 class="first-message"><span class="y">Y</span><span class="n">n</span> ' s</h1>
-      <h1 class="second-message">G A L L E L Y</h1>
-      <h2 class="third-message">Memories last forever.</h2>
-      <h2 class="fourth-message">Well, where shall we go next?</h2>
-    </div>
-  </div>
-    
-  <div class="photos">
-    <%= render partial: 'photos', collection: @articles %>
   </div>
 </div>

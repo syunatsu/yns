@@ -1,13 +1,29 @@
 .wrapper {
-  height: 100vh;
-  width: 100vw;
+  text-align: center;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+.container {
+  padding: 0;
+  height: 100%;
+  width: 100%;
   background-image: url("/images/article.index.wrapper.jpeg");
-  background-repeat: none;
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-size: contain;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
 }
 
 .upper {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 100%;
   width: 80%;
   margin: 0 auto;
@@ -15,45 +31,74 @@
 
 .upper-menu {
   display: flex;
+  height: 100px;
+  padding: 20px;
+}
+
+.when-sign-in-menu {
+  height: 100%;
+  display: flex;
+  margin: 40px auto 0 40px;
+}
+
+.login-user {
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 70px;
+}
+
+.sign-out {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.when-sign-out-menu {
+  margin: 30px auto 0 0 ;
+  font-size: 20px;
 }
 
 .sign-up {
-  font-size: 20px;
-  margin: 20px 60px 0 60px;
   background-color: rgba(255, 255, 255, 0.8);
+  margin-right: 40px;
   border-radius: 10px;
   padding: 10px;
   width: 80px;
   text-align: center;
+  text-decoration: none;
+  color: black
 }
 
 .sign-in {
-  font-size: 20px;
-  margin: 20px auto 0 0;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   padding: 10px;
   width: 80px;
   text-align: center;
+  text-decoration: none;
+  color: black
 }
 
 .center-menu {
-  color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 
 .new-post {
   margin-right: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
 
 .favorite {
   margin-right: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
 
 .advanced-search {
   margin-right: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
 
 .search-field {
@@ -101,5 +146,32 @@
 .n {
   font-size: 150px;
   color: rgba(254, 116, 3, 0.9);
+}
+
+.photo-background {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 400px;
+}
+
+.new-arrival {
+  color: rgba(239, 39, 4);
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+  
+.photos {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0 10px 0 10px;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
 }
 

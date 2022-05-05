@@ -18,6 +18,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:artcle).permit(:name, :address, :url, :category_id, :image).merge(user_id: current_user.id)
+    params.require(:article).permit(:name, :address, :url, :category_id, :image).merge(user_id: current_user.id)
   end
 end

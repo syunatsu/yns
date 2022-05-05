@@ -14,5 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( 
   reset.css
   user/*
-  article/*
+  article/index
+  article/new
+  article/form
 )

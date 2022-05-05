@@ -46,3 +46,13 @@
   margin-top: 20px;
   border-radius: 10px;
 }
+
+.back-to-root {
+  width: 20%;
+  margin: 40px auto 0 0;
+  font-size: 13px;
+}
+
+.back {
+  text-decoration: none;
+}
