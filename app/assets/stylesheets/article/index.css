@@ -149,18 +149,11 @@
   color: rgba(254, 116, 3, 0.9);
 }
 
-.copyright {
-  color:rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  text-align: center;
-  margin-top: 140px;
-}
-
 .photo-background {
   background-color: rgba(0, 0, 0, 0.3);
   width: 80%;
   margin: 0 auto;
-  padding-top: 400px;
+  padding-top: 250px;
 }
 
 .new-arrival {
@@ -183,3 +176,12 @@
   object-fit: cover;
 }
 
+.copyright {
+  color:rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: center;
+  padding:50px 0  20px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 80%;
+  margin: 0 auto;
+}
