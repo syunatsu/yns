@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 15 }
 
   has_many :articles
+  has_many :comments
 end

@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   validate :validate_image
 
   belongs_to :user
+  has_many :comments
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions

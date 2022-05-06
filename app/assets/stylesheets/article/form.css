@@ -18,8 +18,16 @@
 
 .form-form-field {
   margin: 0 auto;
-  width: 80%;
-  padding: 6px 0;
+  width: 70%;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(58, 58, 58, 0.8);
+}
+
+.form-form-field-category {
+  margin: 0 auto;
+  width: 75%;
+  padding: 6px 10px;
   border-radius: 10px;
   border: 1px solid rgba(58, 58, 58, 0.8);
 }

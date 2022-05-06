@@ -14,10 +14,32 @@
           <li class="show-link">URL：<%= link_to "#{@article.url}", class: "show-url" %></li>
         </ul>
       </div>
-      <div class="show-menus">
-        <%= link_to 'Top Pageへ戻る', root_path %>
-        <%= link_to 'Edit', article_path(@article), class: "show-edit" %>
-        <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "show-delete" %>
+      <div class="show-comment-wrapper">
+        <div class="show-comments">
+          <hr class="show-line">
+          <h4 class="show-comment-title">＜コメント一覧＞</h4>
+          <% @comments.each do |comment|%>
+            <p class="show-comment-sentence">
+              <strong><%= comment.user.nickname %></strong>：
+              <%= comment.text %><br>
+            <p>
+          <% end %>
+          <%= paginate @comments %>
+        </div>
+        <div class="show-comment-form-contents">
+          <%= form_with model: [@article, @comment], class: "show-comment-form", local: true do |f| %>
+            <%= f.text_area :text, class: "show-comment-area", cols: "55", rows: "5" %>
+            <%= f.submit 'Send', class: "show-comment-submit" %>
+          <% end %>
+        </div>
+        <div class="show-menus-container">
+        <hr class="show-line">
+          <div class="show-menus">
+            <%= link_to '◀︎ Top Pageへ戻る', root_path, class: "show-root" %>
+            <%= link_to 'Edit', edit_article_path(@article), class: "show-edit" %>
+            <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "show-delete" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
