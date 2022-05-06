@@ -41,7 +41,7 @@
 }
 
 .show-content {
-  flex-basis: 60%;
+  flex-basis: 40%;
 }
 
 .show-items {
@@ -50,9 +50,6 @@
   margin-top: 120px;
   position: relative;
   z-index: 1;
-}
-.show-name {
-
 }
 
 .show-category {
@@ -76,6 +73,129 @@
   list-style: none;
 }
 
-.show-menus {
+.show-comment-wrapper {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-comments {
+  flex: 1;
+}
+
+.show-line {
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: rgb(200, 200, 200);
+  position: relative;
+  z-index: 1;
+}
+
+.show-comment-title {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.show-comment-sentence {
+  margin: 10px 0 0 5px;
+  color: snow;
+  position: relative;
+  z-index: 1;
+}
+
+
+.show-comment-form-contents {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.show-comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+
+.show-comment-area {
+  border: 1px solid rgb(124, 124, 124);
+  background-color: snow;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.show-comment-submit {
+  border: 1px solid rgb(124, 124, 124);
+  background-color: rgb(138, 138, 138);
+  color: snow;
+  border-radius: 10px;
+  padding: 5px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.show-menus-container {
   flex-basis: 40%;
+}
+
+.show-menus {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin-top: 80px;
+}
+
+.show-root {
+  display: block;
+  text-decoration: none;
+  color: snow;
+  margin-right: 300px;
+  padding: 8px;
+}
+
+.show-edit {
+  display: block;
+  text-decoration: none;
+  color: snow;
+  margin-right: 20px;
+  background-color: rgb(61, 61, 255);
+  border-radius: 8px;
+  padding: 8px 15px;
+}
+
+.show-delete {
+  display: block;
+  text-decoration: none;
+  color: snow;
+  background-color: rgb(255, 94, 94);
+  border-radius: 8px;
+  padding: 8px 15px;
+}
+
+.pagination{
+  margin: 20px auto;
+  width: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.pagination span {
+  color: rgb(234, 215, 68);
+}
+
+.pagination span :hover{
+  background-color: rgb(90, 90, 90);
+}
+
+.pagination a {
+  color: white;
+  text-decoration: none;
+}
+
+.pagination a :hover {
+  background-color: rgb(90, 90, 90);
 }
