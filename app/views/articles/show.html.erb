@@ -16,8 +16,8 @@
       </div>
       <div class="show-menus">
         <%= link_to 'Top Pageへ戻る', root_path %>
-        <%= link_to 'Edit', root_path %><%# 後で変更 %>
-        <%= link_to 'Delete', root_path %><%# 後で変更 %>
+        <%= link_to 'Edit', article_path(@article), class: "show-edit" %>
+        <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "show-delete" %>
       </div>
     </div>
   </div>
