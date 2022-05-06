@@ -1,20 +1,20 @@
-.container {
+.new-container {
   background-image: url("/images/article.index.wrapper.jpeg");
   background-repeat: none;
   background-size: cover;
   height: 100vh;
 }
 
-.title {
+.new-title {
   text-align: center;
 }
 
-.first-title {
+.new-first-title {
   font-size: 80px;
   padding: 50px 0 20px 0;
 }
 
-.second-title {
+.new-second-title {
   font-size :30px;
   margin-bottom: 60px;
 }

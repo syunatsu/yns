@@ -1,35 +1,31 @@
-<% content_for :css do  %>
-  <%= stylesheet_link_tag "user/session", :media => "all" %>
-<% end %>
+<div class="ses-container">
+  <div class="ses-form">
+    <h2 class="ses-form-title">Log in</h2>
 
-<div class="container">
-  <div class="form">
-    <h2 class="form-title">Log in</h2>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'sign-in-form'}) do |f| %>
-      <div class="field">
-        <%= f.label :email, class: "field-label" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field-input" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ses-sign-in-form'}) do |f| %>
+      <div class="ses-field">
+        <%= f.label :email, class: "ses-field-label" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "ses-field-input" %>
       </div>
 
-      <div class="field">
-        <%= f.label :password, class: "field-label" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "field-input" %>
+      <div class="ses-field">
+        <%= f.label :password, class: "ses-field-label" %><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "ses-field-input" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+        <div class="ses-field">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit "Log in", class: "submit" %>
+      <div class="ses-actions">
+        <%= f.submit "Log in", class: "ses-submit" %>
       </div>
     <% end %>
-    <div class="back-to-root">
-      <%= link_to '◀︎ Back', root_path, class: "back" %>
+    <div class="ses-back-to-root">
+      <%= link_to '◀︎ Back', root_path, class: "ses-back" %>
     </div>
   </div>
 </div>
