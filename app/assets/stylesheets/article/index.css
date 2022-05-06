@@ -165,15 +165,40 @@
 .index-photos {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   padding: 0 10px 0 10px;
+}
+
+.index-photo-box {
+  position: relative;
 }
 
 .index-photo {
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  object-fit: cover;
+}
+
+.index-favorites {
+  position: absolute;
+  top: 90%;
+  left: 82%;
+}
+
+.fas{
+  color: red;
+  font-size: 20px;
+  margin-right: 3px;
+}
+
+.far{
+  color: red;
+  font-size: 20px;
+  margin-right: 3px;
+}
+
+.index-favorite-count {
+  color: white;
+  font-size: 20px;
 }
 
 .index-copyright {

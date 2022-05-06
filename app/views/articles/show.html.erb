@@ -4,6 +4,20 @@
       <div class="show-photo">
         <%= image_tag @article.image.variant(resize: '1000x800'), class:"show-upper-photo"%>
       </div>
+      <div class="show-favorites">
+        <%# お気に入りの記述 %>
+        <% if current_user.already_favorited?(@article) %>
+          <%= link_to article_favorites_path(@article), method: :delete do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to article_favorites_path(@article), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+        <span class="show-favorite-count"><%= @article.favorites.count %></span>
+        <%# ここまで %>
+      </div>
     </div>
     <div class="show-under">
       <div class="show-content">
