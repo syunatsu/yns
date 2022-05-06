@@ -9,4 +9,9 @@ class User < ApplicationRecord
 
   has_many :articles
   has_many :comments
+  has_many :favorites, dependent: :destroy
+
+  def already_favorited?(article)
+    favorites.exists?(article_id: article.id)
+  end
 end

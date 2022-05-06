@@ -41,7 +41,23 @@
         <p class="index-new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
         <div class="index-photos">
           <% @articles.each do |article| %>
+            <div class="index-photo-box">
               <%= link_to image_tag(article.image, class: "index-photo"), article_path(article) %>
+              <div class="index-favorites">
+                <%# お気に入りの記述 %>
+                <% if current_user.already_favorited?(article) %>
+                  <%= link_to article_favorites_path(article), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to article_favorites_path(article), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+                <span class="index-favorite-count"><%= article.favorites.count %></span>
+                <%# ここまで %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
