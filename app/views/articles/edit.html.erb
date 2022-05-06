@@ -1,0 +1,18 @@
+<div class="edit-wrapper">
+  <div class="edit-container">
+    <div class="edit-upper">
+      <div class="edit-photo">
+        <%= image_tag @article.image.variant(resize: '1000x800'), class:"edit-upper-photo"%>
+      </div>
+    </div>
+    <div class="edit-under">
+      <div class="edit-content">
+        <%= render 'form', article: @article, class: 'edit-form' %>
+      </div>
+      <div class="edit-menus">
+        <%= link_to 'Top Pageへ戻る', root_path, class: "edit-root" %>
+        <%= link_to 'Delete', root_path, class: "edit-delete" %><%# 後で変更 %>
+      </div>
+    </div>
+  </div>
+</div>
