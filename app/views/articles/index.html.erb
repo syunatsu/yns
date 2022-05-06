@@ -1,55 +1,51 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag "article/index", :media => "all" %>
-<% end %>
-
-<div class="wrapper">
-  <div class="container">
-    <div class="upper">
-      <div class="upper-menu">
+<div class="index-wrapper">
+  <div class="index-container">
+    <div class="index-upper">
+      <div class="index-upper-menu">
 
         <% if user_signed_in? %>
-          <div class="when-sign-in-menu">
-            <p class="login-user"><%= "こんにちは、#{current_user.nickname} さん" %></p>
-            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+          <div class="index-when-sign-in-menu">
+            <p class="index-login-user"><%= "こんにちは、#{current_user.nickname} さん" %></p>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'index-sign-out' %>
           </div>
         <% else %>
-          <div class="when-sign-out-menu">
-            <%= link_to 'Sign-up', new_user_registration_path, class: "sign-up" %>
-            <%= link_to 'Sign-in', new_user_session_path, class: "sign-in" %> 
+          <div class="index-when-sign-out-menu">
+            <%= link_to 'Sign up', new_user_registration_path, class: "index-sign-up" %>
+            <%= link_to 'Sign in', new_user_session_path, class: "index-sign-in" %> 
           </div>
         <% end %>
 
-        <div class="center-menu">
-          <%= link_to 'new post', new_article_path, class: "new-post" %>
-          <%= link_to 'favorite', root_path, class: "favorite" %>
-          <%= link_to 'advanced search', root_path, class: "advanced-search" %>
-          <div class="search">
+        <div class="index-center-menu">
+          <%= link_to 'new post', new_article_path, class: "index-new-post" %>
+          <%= link_to 'favorite', root_path, class: "index-favorite" %>
+          <%= link_to 'advanced search', root_path, class: "index-advanced-search" %>
+          <div class="index-search">
             <%= form_with html: { class: "search-form" } do |f| %>
-              <%= f.text_field :search, class: "search-field" %>
-              <%= f.submit 'search', class: "submit" %>
+              <%= f.text_field :search, class: "index-search-field" %>
+              <%= f.submit 'search', class: "index-submit" %>
             <% end %>
           </div>
         </div>
         
       </div>
-      <div class="messages">
-        <h1 class="first-message"><span class="y">Y</span><span class="n">n</span> ' s</h1>
-        <h1 class="second-message">G A L L E L Y</h1>
-        <h2 class="third-message">Memories last forever.</h2>
-        <h2 class="fourth-message">Well, where shall we go next?</h2>
+      <div class="index-messages">
+        <h1 class="index-first-message"><span class="index-y">Y</span><span class="index-n">n</span> ' s</h1>
+        <h1 class="index-second-message">G A L L E L Y</h1>
+        <h2 class="index-third-message">Memories last forever.</h2>
+        <h2 class="index-fourth-message">Well, where shall we go next?</h2>
       </div>
     </div>
       
     <% if user_signed_in? && @articles.present?%>
-      <div class="photo-background">
-        <p class="new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
-        <div class="photos">
+      <div class="index-photo-background">
+        <p class="index-new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
+        <div class="index-photos">
           <% @articles.each do |article| %>
-              <%= link_to image_tag(article.image, class: "photo"), '#' %>
+              <%= link_to image_tag(article.image, class: "index-photo"), article_path(article) %>
           <% end %>
         </div>
       </div>
     <% end %>
-    <p class="copyright">©︎2022 Yuki Ohira</p>
+    <p class="index-copyright">©︎2022 Yuki Ohira</p>
   </div>
 </div>

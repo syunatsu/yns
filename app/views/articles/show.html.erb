@@ -1,3 +1,24 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag "article/show", media => "all" %>
-<% end %>
+<div class="show-wrapper">
+  <div class="show-container">
+    <div class="show-upper">
+      <div class="show-photo">
+        <%= image_tag @article.image.variant(resize: '1000x800'), class:"show-upper-photo"%>
+      </div>
+    </div>
+    <div class="show-under">
+      <div class="show-content">
+        <ul class="show-items">
+          <li class="show-name">名前：<%= @article.name %></li>
+          <li class="show-category">カテゴリー：<%= @article.category.name %></li>
+          <li class="show-address">住所：<%= @article.address %></li>
+          <li class="show-link">URL：<%= link_to "#{@article.url}", class: "show-url" %></li>
+        </ul>
+      </div>
+      <div class="show-menus">
+        <%= link_to 'Top Pageへ戻る', root_path %>
+        <%= link_to 'Edit', root_path %><%# 後で変更 %>
+        <%= link_to 'Delete', root_path %><%# 後で変更 %>
+      </div>
+    </div>
+  </div>
+</div>
