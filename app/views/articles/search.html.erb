@@ -5,7 +5,7 @@
       <%= link_to 'new post', new_article_path, class: "search-new-post" %>
       <%= link_to 'favorite', root_path, class: "search-favorite" %>
       <div class="index-search">
-        <%= form_with html: { class: "search-search-form" } do |f| %>
+        <%= form_with url: search_articles_path, local: true, method: :get, html: { class: "search-search-form" } do |f| %>
           <%= f.text_field :search, class: "search-search-field" %>
           <%= f.submit 'search', class: "search-submit" %>
         <% end %>
