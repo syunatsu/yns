@@ -138,6 +138,13 @@
   margin-left: auto;
 }
 
+.show-not-signin {
+  position: relative;
+  z-index: 1;
+  color: white;
+  margin-bottom: 10px;
+}
+
 .show-comment-form-contents {
   position: relative;
   z-index: 1;

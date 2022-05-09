@@ -31,17 +31,21 @@
       <div class="show-comment-wrapper">
         <div class="show-comments">
           <hr class="show-line">
-          <h4 class="show-comment-title">＜コメント一覧＞</h4>
-          <div class="show-comment-body">
-            <% @comments.each do |comment|%>
-              <div class="show-comment-sentence">
-                <strong><%= comment.user.nickname %></strong>：<%= comment.text %>
-                <% if user_signed_in? && current_user.id == comment.user_id %>
-                  <%= link_to 'Delete', article_comment_path(comment.article.id, comment.id), method: :delete, data: {confirm: "コメントを削除しますか？"}, class:"show-comment-delete" %><br>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+          <% if @comments.present? %>
+            <h4 class="show-comment-title">＜コメント一覧＞</h4>
+            <div class="show-comment-body">
+              <% @comments.each do |comment|%>
+                <div class="show-comment-sentence">
+                  <strong><%= comment.user.nickname %></strong>：<%= comment.text %>
+                  <% if user_signed_in? && current_user.id == comment.user_id %>
+                    <%= link_to 'Delete', article_comment_path(comment.article.id, comment.id), method: :delete, data: {confirm: "コメントを削除しますか？"}, class:"show-comment-delete" %><br>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="show-not-signin">＜コメントはまだありません＞</div>
+          <% end%>
           <div>
             <%= paginate @comments %>
           </div>

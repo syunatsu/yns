@@ -39,6 +39,7 @@
     <% if user_signed_in? && @articles.present?%>
       <div class="index-photo-background">
         <p class="index-new-arrival">N e w&nbsp; &nbsp;a r r i v a l</p>
+        <hr class="index-line">
         <div class="index-photos">
           <% @articles.each do |article| %>
             <div class="index-photo-box">
