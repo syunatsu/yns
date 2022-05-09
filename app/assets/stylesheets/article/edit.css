@@ -34,6 +34,11 @@
   z-index: 1;
 }
 
+.edit-upper-photo {
+  box-shadow: 0 0 15px black;
+  border-radius: 10px;
+}
+
 .edit-under {
   flex-basis: 40%;
   display: flex;
@@ -68,4 +73,12 @@
   background-color: rgb(255, 94, 94);
   border-radius: 8px;
   padding: 8px 15px;
+  box-shadow: 0 0 10px white;
+}
+
+.edit-delete:active {
+  box-shadow: none;
+  position:relative;
+  top: 1px;
+  left: 1px;
 }
