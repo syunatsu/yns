@@ -6,6 +6,14 @@ class CommentsController < ApplicationController
     redirect_to "/articles/#{comment.article.id}"
   end
 
+  def destroy
+    # article = Article.find(params[:article_id])
+    # article.comments(params[:id]).destroy
+    comment = Comment.find_by(id: params[:id], article_id: params[:article_id])
+    comment.destroy
+    redirect_to "/articles/#{comment.article.id}"
+  end
+
   private
 
   def comment_params

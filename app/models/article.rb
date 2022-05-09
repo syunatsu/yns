@@ -13,10 +13,10 @@ class Article < ApplicationRecord
   belongs_to :category
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Article.where('name like(?)', "%#{search}%")
     else
-      Aeticle.all
+      Article.all
     end
   end
 
