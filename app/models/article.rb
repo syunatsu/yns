@@ -16,7 +16,7 @@ class Article < ApplicationRecord
     if search != ""
       Article.where('name like(?)', "%#{search}%")
     else
-      Aeticle.all
+      Article.all
     end
   end
 
