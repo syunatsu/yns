@@ -12,6 +12,14 @@ class Article < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
 
+  def self.search(search)
+    if search != ""
+      Article.where('name like(?)', "%#{search}%")
+    else
+      Aeticle.all
+    end
+  end
+
   private
 
   def validate_image

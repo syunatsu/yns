@@ -1,0 +1,41 @@
+<div class="search-container">
+  <div class="search-inner-container">
+    <div class="search-upper">
+      <%= link_to '◀︎ Back', root_path, class: "search-back"%>
+      <%= link_to 'new post', new_article_path, class: "search-new-post" %>
+      <%= link_to 'favorite', root_path, class: "search-favorite" %>
+      <div class="index-search">
+        <%= form_with html: { class: "search-search-form" } do |f| %>
+          <%= f.text_field :search, class: "search-search-field" %>
+          <%= f.submit 'search', class: "search-submit" %>
+        <% end %>
+      </div>
+    </div>
+    <h2 class="search-message">Search results</h2>
+    <div class="search-results">
+      <div class="search-photo-background">
+        <div class="search-photos">
+          <% @articles.each do |article| %>
+            <div class="search-photo-box">
+              <%= link_to image_tag(article.image, class: "search-photo"), article_path(article) %>
+              <div class="search-favorites">
+                <%# お気に入りの記述 %>
+                <% if current_user.already_favorited?(article) %>
+                  <%= link_to article_favorites_path(article), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to article_favorites_path(article), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+                <span class="search-favorite-count"><%= article.favorites.count %></span>
+                <%# ここまで %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,16 @@
             <p class="index-login-user"><%= "こんにちは、#{current_user.nickname} さん" %></p>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'index-sign-out' %>
           </div>
+          <div class="index-center-menu">
+            <%= link_to 'new post', new_article_path, class: "index-new-post" %>
+            <%= link_to 'favorite', root_path, class: "index-favorite" %>
+            <div class="index-search">
+              <%= form_with url: search_articles_path, local: true, method: :get, html: { class: "search-form" } do |f| %>
+                <%= f.text_field :search, class: "index-search-field" %>
+                <%= f.submit 'search', class: "index-submit" %>
+              <% end %>
+            </div>
+          </div>
         <% else %>
           <div class="index-when-sign-out-menu">
             <%= link_to 'Sign up', new_user_registration_path, class: "index-sign-up" %>
@@ -15,17 +25,7 @@
           </div>
         <% end %>
 
-        <div class="index-center-menu">
-          <%= link_to 'new post', new_article_path, class: "index-new-post" %>
-          <%= link_to 'favorite', root_path, class: "index-favorite" %>
-          <%= link_to 'advanced search', root_path, class: "index-advanced-search" %>
-          <div class="index-search">
-            <%= form_with html: { class: "search-form" } do |f| %>
-              <%= f.text_field :search, class: "index-search-field" %>
-              <%= f.submit 'search', class: "index-submit" %>
-            <% end %>
-          </div>
-        </div>
+        
         
       </div>
       <div class="index-messages">
