@@ -50,6 +50,11 @@
   z-index: 1;
 }
 
+.show-upper-photo {
+  box-shadow: 0 0 18px black;
+  border-radius: 10px;
+}
+
 .show-under {
   flex-basis: 40%;
   display: flex;
@@ -63,7 +68,7 @@
 .show-items {
   color: white;
   font-size: 40px;
-  margin-top: 120px;
+  margin-top: 80px;
   position: relative;
   z-index: 1;
 }
@@ -128,6 +133,10 @@
   margin-bottom: 10px;
 }
 
+.show-for-margin {
+  margin-right: auto;
+}
+
 .show-comment-delete {
   text-decoration: none;
   color: snow;
@@ -135,7 +144,17 @@
   font-size: 10px;
   border-radius: 5px;
   padding: 3px;
-  margin-left: auto;
+}
+
+.show-comment-delete:hover {
+  box-shadow: 0 0 8px white;
+}
+
+.show-comment-delete:active {
+  box-shadow: none;
+  position: relative;
+  top: 1px;
+  left: 1px;
 }
 
 .show-not-signin {
@@ -175,6 +194,14 @@
   padding: 5px;
   width: 70%;
   margin: 0 auto;
+  box-shadow: 5px 5px black;
+}
+
+.show-comment-submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 
 .show-menus-container {
@@ -185,7 +212,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .show-root {
@@ -204,6 +231,14 @@
   background-color: rgb(61, 61, 255);
   border-radius: 8px;
   padding: 8px 15px;
+  box-shadow: 0 0 10px white;
+}
+
+.show-edit:active {
+  box-shadow: none;
+  position:relative;
+  top: 1px;
+  left: 1px;
 }
 
 .show-delete {
@@ -213,6 +248,15 @@
   background-color: rgb(255, 94, 94);
   border-radius: 8px;
   padding: 8px 15px;
+  padding: 8px 15px;
+  box-shadow: 0 0 10px white;
+}
+
+.show-delete:active {
+  box-shadow: none;
+  position:relative;
+  top: 1px;
+  left: 1px;
 }
 
 .pagination{

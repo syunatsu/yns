@@ -22,7 +22,7 @@
     <div class="show-under">
       <div class="show-content">
         <ul class="show-items">
-          <li class="show-name">名前：<%= @article.name %></li>
+          <li class="show-name">タイトル：<%= @article.name %></li>
           <li class="show-category">カテゴリー：<%= @article.category.name %></li>
           <li class="show-address">住所：<%= @article.address %></li>
           <li class="show-link">URL：<%= link_to "#{@article.url}", class: "show-url" %></li>
@@ -34,12 +34,14 @@
           <% if @comments.present? %>
             <h4 class="show-comment-title">＜コメント一覧＞</h4>
             <div class="show-comment-body">
-              <% @comments.each do |comment|%>
+              <% @comments.each do |comment| %>
                 <div class="show-comment-sentence">
-                  <strong><%= comment.user.nickname %></strong>：<%= comment.text %>
-                  <% if user_signed_in? && current_user.id == comment.user_id %>
-                    <%= link_to 'Delete', article_comment_path(comment.article.id, comment.id), method: :delete, data: {confirm: "コメントを削除しますか？"}, class:"show-comment-delete" %><br>
-                  <% end %>
+                  <div class="show-for-margin">
+                    <strong><%= comment.user.nickname %></strong>：<%= comment.text %>
+                  </div>
+                    <% if user_signed_in? && current_user.id == comment.user_id %>
+                      <%= link_to 'Delete', article_comment_path(comment.article.id, comment.id), method: :delete, data: {confirm: "コメントを削除しますか？"}, class:"show-comment-delete" %><br>
+                    <% end %>
                 </div>
               <% end %>
             </div>
@@ -59,8 +61,10 @@
             <hr class="show-line">
             <div class="show-menus">
               <%= link_to '◀︎ Top Pageへ戻る', root_path, class: "show-root" %>
-              <%= link_to 'Edit', edit_article_path(@article), class: "show-edit" %>
-              <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "show-delete" %>
+              <% if current_user.id == @article.user_id %>
+                <%= link_to 'Edit', edit_article_path(@article), class: "show-edit" %>
+                <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "show-delete" %>
+              <% end %>
             </div>
           </div>
         </div>

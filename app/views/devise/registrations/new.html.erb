@@ -9,7 +9,7 @@
   <%# ここからフォーム部分 %>
   <div class="reg-form-container">
     <div class="reg-form">
-      <h2 class="freg-orm-title">Sign up</h2>
+      <h2 class="reg-form-title">Sign up</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'reg-sign-up-form'}) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
