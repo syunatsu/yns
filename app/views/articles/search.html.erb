@@ -3,7 +3,7 @@
     <div class="search-upper">
       <%= link_to '◀︎ Back', root_path, class: "search-back"%>
       <%= link_to 'new post', new_article_path, class: "search-new-post" %>
-      <%= link_to 'favorite', root_path, class: "search-favorite" %>
+      <%= link_to 'favorite', user_path(current_user), class: "search-favorite" %>
       <div class="index-search">
         <%= form_with url: search_articles_path, local: true, method: :get, html: { class: "search-search-form" } do |f| %>
           <%= f.text_field :search, class: "search-search-field" %>
