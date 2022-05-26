@@ -1,24 +1,59 @@
-# README
+# アプリケーション名
+LOBOLA cafe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+料理のレシピを投稿し、料理、お菓子、飲み物の別で管理、閲覧できる。
 
-Things you may want to cover:
+# URL
+https://lobora.herokuapp.com/
 
-* Ruby version
+# テスト用アカウント
+- Basic認証パスワード：
+- Basic認証ID：
+- メールアドレス：
+- パスワード：
 
-* System dependencies
+# 利用方法
 
-* Configuration
+### トップページ
+- トップページは、ヘッダー、メイン、フッターという構成
+- ヘッダーのNEW RECIPEから新しいレシピの投稿が可能
+- ヘッダーもしくはメイン中段のリンクから食べ物、お菓子、飲み物のそれぞれのページへ遷移可能
 
-* Database creation
+### レシピ投稿
+- いずれかのページのヘッダーのNEW RECIPEからレシピの新規投稿が可能
+- 入力項目は全て必須である
+- 値段については、表示をカフェのメニュー風にするための飾りである
+- 全ての項目に入力したら送信する
+- 入力した内容は、FOOD、DOLCE、DRINKのカテゴリ別のページ最下部に一覧表示される
 
-* Database initialization
+# アプリケーションを作成した背景
+キッチンの調味料がまとめてあるあたりにふと目をやると、そこには古びた１冊のノートがあった。<br>
+気になって中を見てみると、隅から隅までびっしりと料理やお菓子のレシピが書いてある。これは<br>
+妻がコツコツと書き溜めたレシピノートであったのだ。しかし最初の方のページは、じが薄れてい<br>
+るし、所々汚れているため見にくい箇所もある。これは紙ではなくデータで管理してあげたい！と<br>
+思い、このアプリケーションを作成するに至った。
 
-* How to run the test suite
+# 洗い出した要件（要件定義シート）
+https://docs.google.com/spreadsheets/d/1ILvh_HevQeTyDnQOVs6UzDRJZOy3ONZCAIsOV7pqgMU/edit#gid=982722306
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/2c271ec5b7b3abdd554ec95ee40c98b7.png)](https://gyazo.com/2c271ec5b7b3abdd554ec95ee40c98b7)
 
-* Deployment instructions
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/9ad9aff40a45371ea5f95841c4bf775f.png)](https://gyazo.com/9ad9aff40a45371ea5f95841c4bf775f)
 
-* ...
+# 開発環境
+- フロントエンド
+- バックエンド
+- インフラ
+- テスト
+- テキストエディタ
+- タスク管理
+
+# 工夫したポイント
+- レシピを保存しておくことが目的であるので、余計な機能をつけない
+- 見た目が素敵なページにしたかったため、各配置やアニメーションをつけた
+- モデルやコントローラーを多数作成して複雑にならないように、menusコントローラーの<br>
+  indexアクションのみでFOOD、DOLCE、DRINKページへ遷移できるようにした
+- 新規投稿ページは、チープなイメージにならないようにモーダルウィンドウで実装した
