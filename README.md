@@ -8,10 +8,10 @@ LOBOLA cafe
 https://lobora.herokuapp.com/
 
 # テスト用アカウント
-- Basic認証パスワード：
-- Basic認証ID：
-- メールアドレス：
-- パスワード：
+- Basic認証パスワード：yukiohira
+- Basic認証ID：nattyanlove0813
+- メールアドレス：yuki@mail
+- パスワード：111111
 
 # 利用方法
 
